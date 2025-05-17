@@ -1,0 +1,534 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Container for consistent width */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: rgba(26, 42, 68, 0.9); /* Semi-transparent dark blue */
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: center; /* Center the nav on index.html */
+    align-items: center;
+}
+
+header .container nav {
+    flex: 1; /* Ensure nav takes available space */
+    display: flex;
+    justify-content: center;
+}
+
+.header-logo + nav {
+    justify-content: flex-end; /* Align nav to the right on process.html */
+}
+
+.header-logo .logo-text {
+    font-size: 1.5rem; /* Smaller size for header */
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.logo-text {
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.logo-highlight {
+    color: #d32f2f; /* Darker red */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #d32f2f; /* Match darker red */
+}
+
+nav a.active {
+    color: #d32f2f; /* Match darker red */
+    font-weight: 700;
+}
+
+/* Logo Section */
+.logo-section {
+    height: 100vh; /* Full viewport height */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1a2a44; /* Dark background to match theme */
+    text-align: center;
+}
+
+.logo-section .logo-text {
+    font-size: 10rem; /* Large size to "fill" the screen */
+    line-height: 1;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    animation: subtleFadeIn 1s ease-in-out; /* Adjusted animation */
+}
+
+/* Subtle animation */
+@keyframes subtleFadeIn {
+    0% { opacity: 0; transform: scale(0.95); } /* Smaller scale change */
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* General Section Styling */
+.section {
+    padding: 4rem 0;
+}
+
+.section h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #1a2a44;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #1a2a44;
+}
+
+/* Process Overview Section */
+.section p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.cta-button {
+    background: #d32f2f; /* Match darker red */
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background: #b71c1c; /* Even darker red on hover */
+}
+
+/* Process Details Section */
+.intro-text {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: #666;
+}
+
+.process-steps {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.process-step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.process-step:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #d32f2f; /* Match darker red */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.process-step h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #1a2a44;
+}
+
+.process-step p {
+    font-size: 1rem;
+    color: #666;
+    text-align: left;
+}
+
+/* Services Section */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1a2a44;
+}
+
+/* Vehicles Section */
+.vehicle-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.vehicle-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-5px);
+}
+
+.vehicle-image-placeholder {
+    background: #e0e0e0;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.vehicle-card h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem;
+    color: #1a2a44;
+}
+
+.vehicle-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.vehicle-link {
+    display: inline-block;
+    background: #d32f2f; /* Match darker red */
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    transition: background 0.3s ease;
+}
+
+.vehicle-link:hover {
+    background: #b71c1c; /* Even darker red on hover */
+}
+
+/* FAQ Section */
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+    width: 100%;
+    background: #f9f9f9;
+    border: none;
+    padding: 1rem;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #1a2a44;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: #f0f0f0;
+}
+
+.faq-question::after {
+    content: '\f078'; /* Font Awesome chevron-down */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 1rem;
+}
+
+.faq-answer.active {
+    max-height: 200px; /* Adjust based on content */
+    padding: 1rem;
+}
+
+.faq-answer p {
+    color: #666;
+}
+
+.faq-link {
+    color: #d32f2f; /* Match darker red */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.faq-link:hover {
+    color: #b71c1c; /* Even darker red on hover */
+    text-decoration: underline;
+}
+
+/* Contact Section */
+.contact-details {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-details p {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+.contact-details a {
+    color: #d32f2f; /* Match darker red */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: #b71c1c; /* Even darker red on hover */
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #1a2a44;
+    color: white;
+    padding: 3rem 0;
+    border-top: 3px solid #d32f2f; /* Match darker red */
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-text {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.social-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #d32f2f; /* Match darker red */
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .header-logo + nav {
+        justify-content: center; /* Center nav on mobile for process.html */
+    }
+
+    .header-logo .logo-text {
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav a {
+        font-size: 1rem; /* Slightly smaller for mobile */
+    }
+
+    .logo-section {
+        height: 70vh;
+    }
+
+    .logo-section .logo-text {
+        font-size: 6rem; /* Smaller for tablets */
+    }
+
+    .section h1 {
+        font-size: 2.2rem;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+
+    .contact-details p {
+        font-size: 1rem;
+    }
+
+    .faq-question {
+        font-size: 1.1rem;
+    }
+
+    .vehicle-link {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .process-step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .step-number {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-logo .logo-text {
+        font-size: 1rem;
+    }
+
+    .logo-section {
+        height: 60vh;
+    }
+
+    .logo-section .logo-text {
+        font-size: 4rem; /* Smaller for mobile */
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 2rem 0;
+    }
+
+    .section h1 {
+        font-size: 2rem;
+    }
+
+    .social-links {
+        gap: 1.5rem;
+    }
+
+    .social-icon {
+        font-size: 1.3rem;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+    }
+
+    .process-step h3 {
+        font-size: 1.3rem;
+    }
+}
