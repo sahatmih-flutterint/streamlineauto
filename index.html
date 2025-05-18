@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StreamLine Auto - Внос на автомобили от Канада</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.rel='stylesheet'">
 </head>
 <body>
     <!-- Header -->
@@ -71,13 +71,13 @@
             <h2>Налични автомобили</h2>
             <div class="vehicle-gallery">
                 <div class="vehicle-card">
-                    <div class="vehicle-image-placeholder">BMW X5 Изображение</div>
+                    <img src="https://via.placeholder.com/300x200?text=BMW+X5" alt="BMW X5" loading="lazy" class="vehicle-image">
                     <h3>BMW X5</h3>
                     <p>Модел 2023, 32 000 км</p>
                     <a href="#" class="vehicle-link">Виж в Mobile.bg</a>
                 </div>
                 <div class="vehicle-card">
-                    <div class="vehicle-image-placeholder">Audi Q7 Изображение</div>
+                    <img src="https://via.placeholder.com/300x200?text=Audi+Q7" alt="Audi Q7" loading="lazy" class="vehicle-image">
                     <h3>Audi Q7</h3>
                     <p>Модел 2022, 24 000 км</p>
                     <a href="#" class="vehicle-link">Виж в Mobile.bg</a>
