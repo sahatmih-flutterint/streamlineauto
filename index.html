@@ -3,33 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StreamLine Auto - Внос на автомобили от Канада</title>
+    <title>StreamLine Auto - Внос на автомобили</title>
+    <meta name="description" content="StreamLine Auto - Внос на автомобили от Европа и САЩ. Надеждни услуги за внос, регистрация и доставка на вашия мечтан автомобил.">
+    <meta name="keywords" content="внос на автомобили, StreamLine Auto, автомобили от Европа, автомобили от САЩ, регистрация на автомобили">
+    <meta name="author" content="StreamLine Auto">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="StreamLine Auto - Внос на автомобили">
+    <meta property="og:description" content="Надеждни услуги за внос, регистрация и доставка на вашия мечтан автомобил.">
+    <meta property="og:image" content="logo/streamline-auto-logo.png">
+    <meta property="og:url" content="https://your-auto-site.com">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="logo/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style" onload="this.rel='stylesheet'">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.rel='stylesheet'">
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-X"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-XXXXX-X');
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <button id="dark-mode-toggle" aria-label="Превключване на тъмен режим">
+        <i class="fas fa-moon"></i>
+    </button>
+
     <!-- Header -->
     <header>
         <div class="container">
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
+            <div class="header-logo">
+                <a href="index.html" class="logo-text">StreamLine <span class="logo-highlight">Auto</span></a>
             </div>
+            <button class="menu-toggle" aria-label="Отваряне на менюто">
+                <i class="fas fa-bars"></i>
+            </button>
             <nav>
                 <ul>
-                    <li><a href="#home">Начало</a></li>
+                    <li><a href="#home" class="active">Начало</a></li>
                     <li><a href="#process">Какъв е процесът?</a></li>
                     <li><a href="#services">Услуги</a></li>
-                    <li><a href="#vehicles">Налични Автомобили</a></li>
-                    <li><a href="#faq">ЧЗВ</a></li>
+                    <li><a href="#vehicles">Автомобили</a></li>
+                    <li><a href="#faq">Често задавани въпроси</a></li>
                     <li><a href="#contact">Контакти</a></li>
                 </ul>
             </nav>
@@ -37,19 +52,17 @@
     </header>
 
     <!-- Logo Section -->
-    <section id="home" class="logo-section section">
-        <div class="container">
-            <div class="logo-text">StreamLine <span class="logo-highlight">Auto</span></div>
-        </div>
+    <section id="home" class="logo-section">
+        <a href="index.html" class="logo-text">StreamLine <span class="logo-highlight">Auto</span></a>
     </section>
 
     <!-- Process Overview Section -->
     <section id="process" class="section">
         <div class="container">
-            <h2>Какъв е процесът?</h2>
-            <p>Научете повече за това как протича процесът за внос на автомобил с нас. Разгледайте стъпките в детайли и започнете своето пътуване към мечтания автомобил.</p>
+            <h1>Какъв е процесът?</h1>
+            <p>Разберете как работи процесът на внос на автомобили с нас. Ние правим всичко лесно и прозрачно за вас.</p>
             <div class="cta-button-wrapper">
-                <a href="process.html" class="cta-button">Вижте целия процес</a>
+                <a href="process.html" class="cta-button">Научете повече</a>
             </div>
         </div>
     </section>
@@ -60,16 +73,16 @@
             <h2>Нашите услуги</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Избор на автомобили</h3>
-                    <p>Намерете идеалния автомобил от официални представители на марката в Канада!.</p>
+                    <h3>Търсене на автомобил</h3>
+                    <p>Ние намираме идеалния автомобил според вашите изисквания и бюджет.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Доставка и обмитяване</h3>
-                    <p>Безпроблемна доставка и митническо оформяне.</p>
+                    <h3>Внос и доставка</h3>
+                    <p>Организираме целия процес по вноса и доставката на автомобила до вас.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Регистрация</h3>
-                    <p>Помощ при издаване на технотест и смяна на стопове.</p>
+                    <h3>Регистрация и документи</h3>
+                    <p>Поемаме грижата за всички документи и регистрацията в КАТ.</p>
                 </div>
             </div>
         </div>
@@ -78,19 +91,19 @@
     <!-- Vehicles Section -->
     <section id="vehicles" class="section">
         <div class="container">
-            <h2>Налични автомобили</h2>
+            <h2>Нашите автомобили</h2>
             <div class="vehicle-gallery">
                 <div class="vehicle-card">
-                    <img src="https://via.placeholder.com/150x100?text=Loading..." data-src="https://via.placeholder.com/300x200?text=BMW+X5" alt="BMW X5" loading="lazy" class="vehicle-image lazy-load">
+                    <img src="logo/bmw.png" alt="BMW X5" class="vehicle-image lazy-load">
                     <h3>BMW X5</h3>
-                    <p>Модел 2023, 32 000 км</p>
-                    <a href="#" class="vehicle-link">Виж в Mobile.bg</a>
+                    <p>Модел от 2020 година, в отлично състояние.</p>
+                    <a href="https://www.mobile.bg/obiava-21734216715483932-bmw-x5-m-sport-xdrive40i-2-komplekta-gumi-dzhanti" target="_blank" class="vehicle-link">Вижте повече</a>
                 </div>
                 <div class="vehicle-card">
-                    <img src="https://via.placeholder.com/150x100?text=Loading..." data-src="https://via.placeholder.com/300x200?text=Audi+Q7" alt="Audi Q7" loading="lazy" class="vehicle-image lazy-load">
-                    <h3>Audi Q7</h3>
-                    <p>Модел 2022, 24 000 км</p>
-                    <a href="#" class="vehicle-link">Виж в Mobile.bg</a>
+                    <img src="logo/e400.png" alt="Mercedes-Benz E-Class E400 4MATIC 2017" class="vehicle-image lazy-load">
+                    <h3>Mercedes-Benz E-Class E400 4MATIC 2017</h3>
+                    <p>Луксозен седан с всички екстри, 2017 година.</p>
+                    <a href="https://www.mobile.bg/obiava-11745653384820390-mercedes-benz-e-400-e400-4matic-amg-line" target="_blank" class="vehicle-link">Вижте повече</a>
                 </div>
             </div>
         </div>
@@ -99,36 +112,24 @@
     <!-- FAQ Section -->
     <section id="faq" class="section">
         <div class="container">
-            <h2>Често задавани въпроси (ЧЗВ)</h2>
+            <h2>Често задавани въпроси</h2>
             <div class="faq-list">
                 <div class="faq-item">
-                    <button class="faq-question">Колко време отнема вносът на автомобил?</button>
+                    <button class="faq-question">Колко време отнема вносът на автомобил? <span></span></button>
                     <div class="faq-answer">
-                        <p>Вносът на автомобил обикновено отнема между 8 и 12 седмици, в зависимост от местоположението и митническите процедури.</p>
+                        <p>Вносът обикновено отнема между 2 и 4 седмици, в зависимост от местоположението на автомобила и документите.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">Какви са разходите за внос?</button>
+                    <button class="faq-question">Какви са разходите за внос? <span></span></button>
                     <div class="faq-answer">
-                        <p>Разходите включват цената на автомобила, транспортни такси, митнически сборове и ДДС. Ще Ви предоставим пълна оферта преди плащане.</p>
+                        <p>Разходите варират според модела, годината и държавата на внос. Свържете се с нас за точна оферта <a href="#contact" class="faq-link">тук</a>.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">Мога ли да избера конкретен модел?</button>
+                    <button class="faq-question">Мога ли да избера конкретен модел? <span></span></button>
                     <div class="faq-answer">
-                        <p>Да, можем да намерим конкретния модел, който желаете!</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Предлагате ли застраховка?</button>
-                    <div class="faq-answer">
-                        <p>Предлагаме застраховка на автомобила при доставката!</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Как да изтегля предварителен договор?</button>
-                    <div class="faq-answer">
-                        <p>Можете да изтеглите предварителен договор като натиснете <a href="#" class="faq-link">тук</a>.</p>
+                        <p>Да, ние ще намерим автомобила, който отговаря на вашите изисквания и предпочитания.</p>
                     </div>
                 </div>
             </div>
@@ -140,8 +141,9 @@
         <div class="container">
             <h2>Свържете се с нас</h2>
             <div class="contact-details">
-                <p><strong>Телефон:</strong> <a href="tel:+15551234567">+359878588266</a></p>
-                <p><strong>Адрес:</strong> ул. Кевинова, гр. София, България</p>
+                <p>Имате въпроси? Не се колебайте да се свържете с нас!</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+359123456789">+359 123 456 789</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@streamlineauto.bg">info@streamlineauto.bg</a></p>
             </div>
             <form id="contact-form" class="contact-form">
                 <label for="name">Име:</label>
@@ -158,24 +160,28 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text">© 2025 StreamLine Auto. Всички права запазени.</p>
+            <p class="footer-text">&copy; 2025 StreamLine Auto. Всички права запазени.</p>
             <div class="social-links">
-                <a href="#" class="social-icon" aria-label="Фейсбук"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-icon" aria-label="Инстаграм"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" aria-label="Върни се нагоре"><i class="fas fa-chevron-up"></i></button>
+    <button id="back-to-top" aria-label="Обратно към върха">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
-    <!-- Dark Mode Toggle -->
-    <button id="dark-mode-toggle" aria-label="Превключи тъмен режим"><i class="fas fa-moon"></i></button>
-
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="spinner"></div>
-    </div>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
 
     <script src="js/script.js"></script>
 </body>

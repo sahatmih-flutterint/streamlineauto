@@ -1,3 +1,13 @@
+// Function to set the header height dynamically
+function setHeaderHeight() {
+    const header = document.querySelector('header');
+    document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+}
+
+// Set header height on load and resize
+window.addEventListener('load', setHeaderHeight);
+window.addEventListener('resize', setHeaderHeight);
+
 // Hamburger menu toggle
 document.querySelector('.menu-toggle').addEventListener('click', () => {
     const toggle = document.querySelector('.menu-toggle');
