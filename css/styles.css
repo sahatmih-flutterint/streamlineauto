@@ -31,8 +31,12 @@ header {
 
 header .container {
     display: flex;
-    justify-content: space-between; /* Adjusted for hamburger menu */
+    justify-content: center; /* Center the content on desktop */
     align-items: center;
+}
+
+.header-logo + nav {
+    margin-left: auto; /* Push nav to the right if there's a logo */
 }
 
 .header-logo .logo-text {
@@ -53,10 +57,19 @@ header .container {
 }
 
 .menu-toggle {
-    display: none; /* Hidden on desktop */
+    display: none;
     font-size: 1.5rem;
     cursor: pointer;
     color: white;
+    background: transparent; /* Ensure transparency */
+    border: none; /* Remove any borders */
+    padding: 0; /* Remove padding to show only the icon */
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Center the nav itself */
+    flex: 1; /* Take available space */
 }
 
 nav ul {
@@ -85,7 +98,7 @@ nav a.active {
 }
 
 nav a:active {
-    background: rgba(255, 255, 255, 0.2); /* Touch feedback */
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* Logo Section */
@@ -149,6 +162,7 @@ nav a:active {
     font-size: 1.1rem;
     transition: background 0.3s ease;
     display: inline-block;
+    text-align: center; /* Ensure text inside button is centered */
 }
 
 .cta-button:hover {
@@ -156,7 +170,7 @@ nav a:active {
 }
 
 .cta-button:active {
-    background: rgba(211, 47, 47, 0.8); /* Touch feedback */
+    background: rgba(211, 47, 47, 0.8);
 }
 
 /* Process Details Section */
@@ -300,7 +314,7 @@ nav a:active {
 }
 
 .vehicle-link:active {
-    background: rgba(211, 47, 47, 0.8); /* Touch feedback */
+    background: rgba(211, 47, 47, 0.8);
 }
 
 /* FAQ Section */
@@ -375,7 +389,7 @@ nav a:active {
 }
 
 .faq-link:active {
-    background: rgba(211, 47, 47, 0.2); /* Touch feedback */
+    background: rgba(211, 47, 47, 0.2);
 }
 
 /* Contact Section */
@@ -402,7 +416,7 @@ nav a:active {
 }
 
 .contact-details a:active {
-    background: rgba(211, 47, 47, 0.2); /* Touch feedback */
+    background: rgba(211, 47, 47, 0.2);
 }
 
 /* Footer */
@@ -442,7 +456,7 @@ footer .container {
 }
 
 .social-icon:active {
-    background: rgba(255, 255, 255, 0.2); /* Touch feedback */
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* Responsive Design */
@@ -452,7 +466,7 @@ footer .container {
     }
 
     header .container {
-        flex-direction: row; /* Keep row for hamburger layout */
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding-top: 0.5rem;
@@ -463,13 +477,17 @@ footer .container {
         display: block;
     }
 
+    nav {
+        justify-content: flex-end; /* Align to the right for hamburger toggle */
+    }
+
     nav ul {
-        display: none; /* Hidden by default on mobile */
+        display: none;
         flex-direction: column;
         gap: 0.8rem;
         background: rgba(26, 42, 68, 0.95);
         position: absolute;
-        top: 60px; /* Adjust based on header height */
+        top: 60px;
         left: 0;
         width: 100%;
         padding: 1rem 0;
@@ -477,7 +495,7 @@ footer .container {
     }
 
     nav ul.active {
-        display: flex; /* Show when toggled */
+        display: flex;
     }
 
     nav a {
@@ -500,6 +518,7 @@ footer .container {
 
     .section {
         padding: 2rem 0;
+        text-align: center; /* Ensure text alignment for children */
     }
 
     .section h1 {
@@ -517,6 +536,8 @@ footer .container {
     .cta-button {
         padding: 0.8rem 1.5rem;
         font-size: 1rem;
+        display: block; /* Ensure it behaves as a block for centering */
+        margin: 0 auto; /* Center the button */
     }
 
     .process-step {
@@ -603,7 +624,7 @@ footer .container {
     }
 
     nav ul {
-        top: 50px; /* Adjust for smaller header height */
+        top: 50px;
     }
 
     nav a {
