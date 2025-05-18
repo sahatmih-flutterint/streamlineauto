@@ -1,5 +1,7 @@
 // Hamburger menu toggle
 document.querySelector('.menu-toggle').addEventListener('click', () => {
+    const toggle = document.querySelector('.menu-toggle');
+    toggle.classList.toggle('active');
     document.querySelector('nav ul').classList.toggle('active');
 });
 
@@ -13,6 +15,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         // Close menu on mobile after clicking a link
         if (window.innerWidth <= 768) {
             document.querySelector('nav ul').classList.remove('active');
+            document.querySelector('.menu-toggle').classList.remove('active');
         }
     });
 });

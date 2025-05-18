@@ -27,16 +27,17 @@ header {
     top: 0;
     width: 100%;
     z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Added header shadow */
 }
 
 header .container {
     display: flex;
-    justify-content: center; /* Center the content on desktop */
+    justify-content: center;
     align-items: center;
 }
 
 .header-logo + nav {
-    margin-left: auto; /* Push nav to the right if there's a logo */
+    margin-left: auto;
 }
 
 .header-logo .logo-text {
@@ -61,15 +62,23 @@ header .container {
     font-size: 1.5rem;
     cursor: pointer;
     color: white;
-    background: transparent; /* Ensure transparency */
-    border: none; /* Remove any borders */
-    padding: 0; /* Remove padding to show only the icon */
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.menu-toggle i {
+    transition: transform 0.3s ease; /* Added for hamburger animation */
+}
+
+.menu-toggle.active i {
+    transform: rotate(90deg); /* Rotate icon when active */
 }
 
 nav {
     display: flex;
-    justify-content: center; /* Center the nav itself */
-    flex: 1; /* Take available space */
+    justify-content: center;
+    flex: 1;
 }
 
 nav ul {
@@ -162,7 +171,8 @@ nav a:active {
     font-size: 1.1rem;
     transition: background 0.3s ease;
     display: inline-block;
-    text-align: center; /* Ensure text inside button is centered */
+    text-align: center;
+    width: fit-content; /* Ensure button only takes content width */
 }
 
 .cta-button:hover {
@@ -171,6 +181,13 @@ nav a:active {
 
 .cta-button:active {
     background: rgba(211, 47, 47, 0.8);
+}
+
+@media (min-width: 769px) {
+    .cta-button:hover {
+        transform: scale(1.05); /* Scale effect on hover for desktop */
+        transition: transform 0.3s ease;
+    }
 }
 
 /* Process Details Section */
@@ -478,7 +495,7 @@ footer .container {
     }
 
     nav {
-        justify-content: flex-end; /* Align to the right for hamburger toggle */
+        justify-content: flex-end;
     }
 
     nav ul {
@@ -518,7 +535,7 @@ footer .container {
 
     .section {
         padding: 2rem 0;
-        text-align: center; /* Ensure text alignment for children */
+        text-align: center;
     }
 
     .section h1 {
@@ -536,8 +553,9 @@ footer .container {
     .cta-button {
         padding: 0.8rem 1.5rem;
         font-size: 1rem;
-        display: block; /* Ensure it behaves as a block for centering */
-        margin: 0 auto; /* Center the button */
+        display: block;
+        margin: 0 auto;
+        width: fit-content; /* Ensure centering works */
     }
 
     .process-step {
