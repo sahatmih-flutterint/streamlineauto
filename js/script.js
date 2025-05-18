@@ -49,3 +49,29 @@ window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
     header.classList.toggle('scrolled', window.scrollY > 50);
 });
+
+// Back to Top Button
+const backToTopButton = document.querySelector('#back-to-top');
+window.addEventListener('scroll', () => {
+    backToTopButton.classList.toggle('visible', window.scrollY > 300);
+});
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Image Lazy-Loading Fallback
+document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('img.lazy-load');
+    images.forEach(img => {
+        img.src = img.dataset.src;
+    });
+});
+
+// Dark Mode Toggle
+const darkModeToggle = document.querySelector('#dark-mode-toggle');
+darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const icon = darkModeToggle.querySelector('i');
+    icon.classList.toggle('fa-moon');
+    icon.classList.toggle('fa-sun');
+});

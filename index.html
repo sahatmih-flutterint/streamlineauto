@@ -40,7 +40,9 @@
         <div class="container">
             <h2>Какъв е процесът?</h2>
             <p>Научете повече за това как протича процесът за внос на автомобил с нас. Разгледайте стъпките в детайли и започнете своето пътуване към мечтания автомобил.</p>
-            <a href="process.html" class="cta-button">Вижте целия процес</a>
+            <div class="cta-button-wrapper">
+                <a href="process.html" class="cta-button">Вижте целия процес</a>
+            </div>
         </div>
     </section>
 
@@ -71,13 +73,13 @@
             <h2>Налични автомобили</h2>
             <div class="vehicle-gallery">
                 <div class="vehicle-card">
-                    <img src="https://via.placeholder.com/300x200?text=BMW+X5" alt="BMW X5" loading="lazy" class="vehicle-image">
+                    <img src="https://via.placeholder.com/150x100?text=Loading..." data-src="https://via.placeholder.com/300x200?text=BMW+X5" alt="BMW X5" loading="lazy" class="vehicle-image lazy-load">
                     <h3>BMW X5</h3>
                     <p>Модел 2023, 32 000 км</p>
                     <a href="#" class="vehicle-link">Виж в Mobile.bg</a>
                 </div>
                 <div class="vehicle-card">
-                    <img src="https://via.placeholder.com/300x200?text=Audi+Q7" alt="Audi Q7" loading="lazy" class="vehicle-image">
+                    <img src="https://via.placeholder.com/150x100?text=Loading..." data-src="https://via.placeholder.com/300x200?text=Audi+Q7" alt="Audi Q7" loading="lazy" class="vehicle-image lazy-load">
                     <h3>Audi Q7</h3>
                     <p>Модел 2022, 24 000 км</p>
                     <a href="#" class="vehicle-link">Виж в Mobile.bg</a>
@@ -146,6 +148,12 @@
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Върни се нагоре"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- Dark Mode Toggle -->
+    <button id="dark-mode-toggle" aria-label="Превключи тъмен режим"><i class="fas fa-moon"></i></button>
 
     <script src="js/script.js"></script>
 </body>

@@ -9,6 +9,46 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: #333;
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for dark mode */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background: #1c2526;
+}
+
+body.dark-mode .section,
+body.dark-mode .service-card,
+body.dark-mode .vehicle-card,
+body.dark-mode .process-step,
+body.dark-mode .faq-question {
+    background: #1e2a2a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .logo-section {
+    background: linear-gradient(135deg, #0a141f, #1a2633);
+}
+
+body.dark-mode .section h1,
+body.dark-mode .section h2,
+body.dark-mode .service-card h3,
+body.dark-mode .vehicle-card h3,
+body.dark-mode .process-step h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .section p,
+body.dark-mode .process-step p,
+body.dark-mode .faq-answer p,
+body.dark-mode .contact-details p {
+    color: #b0b0b0;
 }
 
 /* Container for consistent width */
@@ -28,11 +68,11 @@ header {
     width: 100%;
     z-index: 100;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    transition: background 0.3s ease; /* Smooth transition for transparency */
+    transition: background 0.3s ease;
 }
 
 header.scrolled {
-    background: rgba(26, 42, 68, 0.7); /* More transparent when scrolled */
+    background: rgba(26, 42, 68, 0.7);
 }
 
 header .container {
@@ -165,6 +205,12 @@ nav a:active {
     color: #666;
 }
 
+.cta-button-wrapper {
+    display: flex;
+    justify-content: center; /* Fallback to ensure centering */
+    width: 100%;
+}
+
 .cta-button {
     background: #d32f2f;
     color: white;
@@ -173,11 +219,15 @@ nav a:active {
     border-radius: 5px;
     font-weight: 500;
     font-size: 1.1rem;
-    transition: background 0.3s ease, transform 0.1s ease; /* Added transform transition */
+    transition: background 0.3s ease, transform 0.1s ease;
     display: block;
     margin: 0 auto;
     width: fit-content;
     text-align: center;
+}
+
+#process .cta-button {
+    margin: 0 auto; /* Explicitly enforce centering for #process section */
 }
 
 .cta-button:hover {
@@ -186,7 +236,7 @@ nav a:active {
 
 .cta-button:active {
     background: rgba(211, 47, 47, 0.8);
-    transform: scale(0.95); /* Click animation */
+    transform: scale(0.95);
 }
 
 .cta-button:focus {
@@ -305,7 +355,7 @@ nav a:active {
 .vehicle-image {
     width: 100%;
     height: 200px;
-    object-fit: cover; /* Ensure images fit nicely */
+    object-fit: cover;
 }
 
 .vehicle-card h3 {
@@ -483,6 +533,47 @@ footer .container {
     background: rgba(255, 255, 255, 0.2);
 }
 
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+#back-to-top.visible {
+    display: flex;
+    opacity: 1;
+}
+
+#back-to-top:hover {
+    background: #b71c1c;
+}
+
+/* Dark Mode Toggle */
+#dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
@@ -609,7 +700,7 @@ footer .container {
     }
 
     .vehicle-image {
-        height: 150px; /* Smaller height on mobile */
+        height: 150px;
     }
 
     .vehicle-card h3 {
