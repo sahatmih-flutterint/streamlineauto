@@ -1,3 +1,8 @@
+// Hamburger menu toggle
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+    document.querySelector('nav ul').classList.toggle('active');
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -5,6 +10,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
+        // Close menu on mobile after clicking a link
+        if (window.innerWidth <= 768) {
+            document.querySelector('nav ul').classList.remove('active');
+        }
     });
 });
 
