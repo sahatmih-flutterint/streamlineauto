@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-XXXXX-X');
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -89,6 +97,11 @@
 
     <!-- Dark Mode Toggle -->
     <button id="dark-mode-toggle" aria-label="Превключи тъмен режим"><i class="fas fa-moon"></i></button>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

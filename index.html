@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-XXXXX-X');
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -18,7 +26,7 @@
             <nav>
                 <ul>
                     <li><a href="#home">Начало</a></li>
-                    <li><a href="process.html">Какъв е процесът?</a></li>
+                    <li><a href="#process">Какъв е процесът?</a></li>
                     <li><a href="#services">Услуги</a></li>
                     <li><a href="#vehicles">Налични Автомобили</a></li>
                     <li><a href="#faq">ЧЗВ</a></li>
@@ -29,7 +37,7 @@
     </header>
 
     <!-- Logo Section -->
-    <section id="home" class="logo-section">
+    <section id="home" class="logo-section section">
         <div class="container">
             <div class="logo-text">StreamLine <span class="logo-highlight">Auto</span></div>
         </div>
@@ -135,6 +143,15 @@
                 <p><strong>Телефон:</strong> <a href="tel:+15551234567">+359878588266</a></p>
                 <p><strong>Адрес:</strong> ул. Кевинова, гр. София, България</p>
             </div>
+            <form id="contact-form" class="contact-form">
+                <label for="name">Име:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Имейл:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Съобщение:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Изпрати</button>
+            </form>
         </div>
     </section>
 
@@ -154,6 +171,11 @@
 
     <!-- Dark Mode Toggle -->
     <button id="dark-mode-toggle" aria-label="Превключи тъмен режим"><i class="fas fa-moon"></i></button>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

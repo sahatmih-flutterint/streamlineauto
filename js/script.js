@@ -5,13 +5,21 @@ document.querySelector('.menu-toggle').addEventListener('click', () => {
     document.querySelector('nav ul').classList.toggle('active');
 });
 
-// Smooth scrolling for navigation links
+// Smooth scrolling for navigation links with header offset
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        const headerOffset = document.querySelector('header').offsetHeight;
+        const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
             behavior: 'smooth'
         });
+
         // Close menu on mobile after clicking a link
         if (window.innerWidth <= 768) {
             document.querySelector('nav ul').classList.remove('active');
@@ -67,6 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Loading Spinner for Images
+document.querySelectorAll('.vehicle-image').forEach(img => {
+    img.classList.add('loading');
+    img.addEventListener('load', () => img.classList.remove('loading'));
+});
+
 // Dark Mode Toggle
 const darkModeToggle = document.querySelector('#dark-mode-toggle');
 darkModeToggle.addEventListener('click', () => {
@@ -74,4 +88,47 @@ darkModeToggle.addEventListener('click', () => {
     const icon = darkModeToggle.querySelector('i');
     icon.classList.toggle('fa-moon');
     icon.classList.toggle('fa-sun');
+});
+
+// Smooth Section Animations
+const sections = document.querySelectorAll('.section');
+const observerOptions = { threshold: 0.1 };
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+sections.forEach(section => observer.observe(section));
+
+// Sticky Navigation Highlights
+const navLinks = document.querySelectorAll('nav a');
+const navObserverOptions = { threshold: 0.3, rootMargin: '-60px 0px 0px 0px' }; // Adjust for header height
+const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(id)) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}, navObserverOptions);
+sections.forEach(section => navObserver.observe(section));
+
+// Contact Form Submission
+document.querySelector('#contact-form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Съобщението е изпратено! Ще се свържем с вас скоро.');
+    e.target.reset();
+});
+
+// Preloader
+window.addEventListener('load', () => {
+    const preloader = document.querySelector('#preloader');
+    preloader.classList.add('fade-out');
 });
