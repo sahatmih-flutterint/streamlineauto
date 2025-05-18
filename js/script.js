@@ -11,7 +11,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
-        const headerOffset = document.querySelector('header').offsetHeight;
+        const header = document.querySelector('header');
+        const navMenu = document.querySelector('nav ul');
+        const isMenuOpen = navMenu.classList.contains('active');
+        
+        // Base header height
+        let headerOffset = header.offsetHeight;
+        // Add extra offset if menu is open on mobile (menu height approximated as 60px)
+        if (isMenuOpen && window.innerWidth <= 768) {
+            headerOffset += 60; // Account for the nav ul top: 60px
+        }
+
         const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
         const offsetPosition = elementPosition - headerOffset;
 
@@ -104,7 +114,11 @@ sections.forEach(section => observer.observe(section));
 
 // Sticky Navigation Highlights
 const navLinks = document.querySelectorAll('nav a');
-const navObserverOptions = { threshold: 0.3, rootMargin: '-60px 0px 0px 0px' }; // Adjust for header height
+// Adjust rootMargin based on screen size
+const navObserverOptions = {
+    threshold: 0.3,
+    rootMargin: window.innerWidth <= 768 ? '-40px 0px 0px 0px' : '-60px 0px 0px 0px' // Smaller offset on mobile
+};
 const navObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
