@@ -120,31 +120,42 @@ header .container {
 .header-logo .logo-text {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #000000;
+    color: #d32f2f; /* Red for StreamLine */
     text-decoration: none;
-    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.header-logo .logo-highlight {
+    color: #ffffff; /* White for Auto */
+}
+
+body.light-mode .header-logo .logo-text {
+    color: #d32f2f; /* Red for StreamLine in light mode */
+}
+
+body.light-mode .header-logo .logo-highlight {
+    color: #1a2a44; /* Dark blue for Auto in light mode */
 }
 
 .logo-text {
     font-weight: 700;
-    color: #000000;
+    color: #d32f2f; /* Red for consistency */
     text-decoration: none;
-    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
 }
 
 .logo-highlight {
+    color: #ffffff; /* White for consistency */
+}
+
+body.light-mode .logo-text {
     color: #d32f2f;
 }
 
-body.light-mode .header-logo .logo-text,
-body.light-mode .logo-text {
-    color: #000000;
-    text-shadow: none;
+body.light-mode .logo-highlight {
+    color: #1a2a44;
 }
 
 body.light-mode .logo-section .logo-text {
     color: #d32f2f; /* Red for StreamLine in light mode */
-    text-shadow: none;
 }
 
 body.light-mode .logo-section .logo-highlight {
@@ -988,12 +999,12 @@ body.light-mode #dark-mode-toggle i.fa-moon::before {
 
     nav a {
         font-size: 1rem;
-        padding: 0.5rem 0.75rem;
+        padding: 0.5rem 0.8rem;
     }
 
     .logo-section {
-        height: #121212;
-        background: 40vh;
+        height: 40vh;
+        background: #121212;
     }
 
     body.light-mode .logo-section {
@@ -1005,60 +1016,58 @@ body.light-mode #dark-mode-toggle i.fa-moon::before {
     }
 
     .section {
-        padding: calc(var(--header-height: 50px) + 1.5rem);
-    height: 0 1rem;
-}
+        padding: calc(var(--header-height) + 1.5rem) 0 1.5rem 0;
+    }
 
     .section h1 {
-    font-size: 1.5rem;
-}
+        font-size: 1.8rem;
+    }
 
-.section h2 {
-    font-size: 1.2rem;
-}
+    .section h2 {
+        font-size: 1.5rem;
+    }
 
-.section p,
-.intro-text {
-    font-size: 0.9rem;
-}
+    .section p,
+    .intro-text {
+        font-size: 1rem;
+    }
 
-.cta-button {
-    padding: 0.7rem;
-    font-size: 1rem;
-    0.9rem;
-}
+    .cta-button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
 
-.process-step {
-    padding: 1.2rem;
-}
+    .process-step {
+        padding: 1.2rem;
+    }
 
-.process-step h3 {
-    font-size: 1.4rem;
-}
+    .process-step h3 {
+        font-size: 1.4rem;
+    }
 
-.process-step p {
-    font-size: 1rem;
-}
+    .process-step p {
+        font-size: 1rem;
+    }
 
-.service-card h3 {
-    font-size: 1.2rem;
-}
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
 
-.vehicle-card h3 {
-    font-size: 1.2rem;
-}
+    .vehicle-card h3 {
+        font-size: 1.2rem;
+    }
 
-.faq-question {
-    font-size: 1rem;
-}
+    .faq-question {
+        font-size: 1rem;
+    }
 
-.social-links {
-    gap: 1.5rem;
-}
+    .social-links {
+        gap: 1.5rem;
+    }
 
-.social-icon {
-    font-size: 1.3rem;
-}
+    .social-icon {
+        font-size: 1.3rem;
+    }
 }
 
 @media (max-width: 360px) {
@@ -1083,19 +1092,13 @@ body.light-mode #dark-mode-toggle i.fa-moon::before {
         font-size: 1.3rem;
     }
 
-    .section p {
-        font-size: .95rem;
-    }
-
+    .section p,
     .intro-text {
         font-size: 0.95rem;
     }
 
     .cta-button {
-        padding: .6rem;
-        font-size: .85rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
 }
-
-}
-
-/* End of CSS */
