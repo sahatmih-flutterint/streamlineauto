@@ -32,10 +32,6 @@ body.dark-mode .faq-question {
     color: #e0e0e0;
 }
 
-body.dark-mode .logo-section {
-    background: linear-gradient(135deg, #0a141f, #1a2633);
-}
-
 body.dark-mode .section h1,
 body.dark-mode .section h2,
 body.dark-mode .service-card h3,
@@ -63,6 +59,7 @@ body.dark-mode .logo-text,
 body.dark-mode .header-logo .logo-text,
 body.dark-mode .logo-section .logo-text {
     color: #000000; /* Keep black in dark mode */
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5); /* Optional: Improve readability */
 }
 
 /* Container for consistent width */
@@ -102,18 +99,18 @@ header .container {
 .header-logo .logo-text {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #000000; /* Changed to black */
+    color: #000000; /* Black font */
     text-decoration: none;
 }
 
 .logo-text {
     font-weight: 700;
-    color: #000000; /* Changed to black */
+    color: #000000; /* Black font */
     text-decoration: none;
 }
 
 .logo-highlight {
-    color: #d32f2f; /* Preserved red highlight for "Auto" */
+    color: #d32f2f; /* Preserved red for "Auto" */
 }
 
 .menu-toggle {
@@ -176,7 +173,7 @@ nav a:active {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #1a2a44, #2e4066);
+    background: linear-gradient(135deg, #0a141f, #1a2633); /* Dark mode gradient for all modes */
     background-attachment: fixed; /* Parallax effect */
     background-position: center;
     background-size: cover;
@@ -186,7 +183,7 @@ nav a:active {
 .logo-section .logo-text {
     font-size: 10rem;
     line-height: 1;
-    color: #000000; /* Changed to black */
+    color: #000000; /* Black font */
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     animation: subtleFadeIn 1s ease-in-out;
 }
@@ -204,7 +201,7 @@ nav a:active {
 
 /* General Section Styling */
 .section {
-    padding: calc(var(--header-height) + 2rem) 0 4rem 0; /* Dynamic padding based on header height */
+    padding: calc(var(--header-height) + 2rem) 0 4rem 0;
     text-align: center;
     opacity: 0;
     transform: translateY(20px);
@@ -636,7 +633,7 @@ footer .container {
 #back-to-top.visible {
     display: flex;
     opacity: 1;
-    animation: bounce 1s; /* Bounce animation on appear */
+    animation: bounce 1s;
 }
 
 #back-to-top:hover {
@@ -729,13 +726,13 @@ footer .container {
         width: 100%;
         padding: 1rem 0;
         text-align: center;
-        transform: translateY(-100%); /* Initial state for animation */
-        transition: transform 0.3s ease; /* Slide-in animation */
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
     }
 
     nav ul.active {
         display: flex;
-        transform: translateY(0); /* Slide in when active */
+        transform: translateY(0);
     }
 
     nav a {
