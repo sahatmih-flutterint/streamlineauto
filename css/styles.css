@@ -204,11 +204,13 @@ nav a:active {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #0a141f, #1a2633);
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+    background: #121212; /* Match dark theme body */
     text-align: center;
+    transition: background 0.3s ease;
+}
+
+body.light-mode .logo-section {
+    background: #fff; /* Match light theme body */
 }
 
 .logo-section .logo-text {
@@ -321,19 +323,19 @@ body.light-mode .intro-text {
 
 /* Process Details Section */
 .process-steps {
-    max-width: 1000px; /* Wider for better text flow */
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .process-step {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 2.5rem; /* More spacing between steps */
-    padding: 2rem; /* More internal space */
+    margin-bottom: 2.5rem;
+    padding: 2rem;
     background: #252f2f;
-    border-radius: 15px; /* Softer corners */
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25); /* Enhanced shadow */
-    border: 1px solid #3a3a3a; /* Subtle border */
+    border-radius: 15px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    border: 1px solid #3a3a3a;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -353,7 +355,7 @@ body.light-mode .process-step:hover {
 }
 
 .step-number {
-    width: 50px; /* Larger for prominence */
+    width: 50px;
     height: 50px;
     background: #d32f2f;
     color: white;
@@ -363,13 +365,13 @@ body.light-mode .process-step:hover {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    margin-right: 2rem; /* More space from text */
+    margin-right: 2rem;
     flex-shrink: 0;
 }
 
 .process-step h3 {
-    font-size: 1.8rem; /* Larger for emphasis */
-    margin-bottom: 1rem; /* More spacing */
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
     color: #ffffff;
     text-align: left;
     line-height: 1.4;
@@ -381,11 +383,11 @@ body.light-mode .process-step h3 {
 }
 
 .process-step p {
-    font-size: 1.15rem; /* Larger for readability */
+    font-size: 1.15rem;
     color: #b0b0b0;
     text-align: left;
-    line-height: 1.9; /* Improved spacing */
-    margin: 0; /* Remove extra margins */
+    line-height: 1.9;
+    margin: 0;
 }
 
 body.light-mode .process-step p {
@@ -780,10 +782,10 @@ body.light-mode #dark-mode-toggle i.fa-moon::before {
 
     .menu-toggle {
         display: block;
-        font-size: 2rem; /* Larger icon */
-        padding: 0.6rem; /* Larger tap target */
-        background: rgba(255, 255, 255, 0.15); /* Subtle background */
-        border-radius: 8px; /* Rounded */
+        font-size: 2rem;
+        padding: 0.6rem;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 8px;
         color: #ffffff;
         transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
     }
@@ -794,9 +796,9 @@ body.light-mode #dark-mode-toggle i.fa-moon::before {
     }
 
     .menu-toggle.active {
-        background: #d32f2f; /* Red when open */
+        background: #d32f2f;
         color: white;
-        transform: rotate(180deg); /* Smooth rotation */
+        transform: rotate(180deg);
     }
 
     body.light-mode .menu-toggle {
@@ -853,7 +855,11 @@ body.light-mode #dark-mode-toggle i.fa-moon::before {
 
     .logo-section {
         height: 50vh;
-        background-attachment: scroll;
+        background: #121212; /* Match dark theme body */
+    }
+
+    body.light-mode .logo-section {
+        background: #fff; /* Match light theme body */
     }
 
     .logo-section .logo-text {
@@ -977,6 +983,11 @@ body.light-mode #dark-mode-toggle i.fa-moon::before {
 
     .logo-section {
         height: 40vh;
+        background: #121212; /* Match dark theme body */
+    }
+
+    body.light-mode .logo-section {
+        background: #fff; /* Match light theme body */
     }
 
     .logo-section .logo-text {
@@ -1039,6 +1050,15 @@ body.light-mode #dark-mode-toggle i.fa-moon::before {
 }
 
 @media (max-width: 360px) {
+    .logo-section {
+        height: 40vh;
+        background: #121212; /* Match dark theme body */
+    }
+
+    body.light-mode .logo-section {
+        background: #fff; /* Match light theme body */
+    }
+
     .logo-section .logo-text {
         font-size: 2.5rem;
     }
