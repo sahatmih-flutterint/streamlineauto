@@ -8,61 +8,82 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    color: #333;
+    background: #121212; /* Dark theme default */
+    color: #e0e0e0; /* Light text */
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Dark Mode Styles */
-body.dark-mode {
-    background: #121212;
-    color: #e0e0e0;
+/* Light Mode Styles (toggled) */
+body.light-mode {
+    background: #fff; /* Original light theme background */
+    color: #333;
 }
 
-body.dark-mode header,
-body.dark-mode footer {
-    background: #1c2526;
+body.light-mode header {
+    background: rgba(26, 42, 68, 0.9); /* Original light theme header */
 }
 
-body.dark-mode .section,
-body.dark-mode .service-card,
-body.dark-mode .vehicle-card,
-body.dark-mode .process-step,
-body.dark-mode .faq-question {
-    background: #1e2a2a;
-    color: #e0e0e0;
+body.light-mode header.scrolled {
+    background: rgba(26, 42, 68, 0.7);
 }
 
-body.dark-mode .section h1,
-body.dark-mode .section h2,
-body.dark-mode .service-card h3,
-body.dark-mode .vehicle-card h3,
-body.dark-mode .process-step h3 {
-    color: #ffffff;
+body.light-mode footer {
+    background: #1a2a44; /* Original light theme footer */
 }
 
-body.dark-mode .section p,
-body.dark-mode .process-step p,
-body.dark-mode .faq-answer p,
-body.dark-mode .contact-details p {
-    color: #b0b0b0;
+body.light-mode .section,
+body.light-mode .service-card,
+body.light-mode .process-step,
+body.light-mode .faq-question {
+    background: #f9f9f9; /* Original light theme backgrounds */
+    color: #666;
 }
 
-body.dark-mode .vehicle-card:nth-child(odd) {
-    background: #252f2f;
+body.light-mode .vehicle-card {
+    background: #fff;
 }
 
-body.dark-mode .vehicle-card:nth-child(even) {
-    background: #2a3535;
+body.light-mode .vehicle-card:nth-child(odd) {
+    background: #f0f4f8;
 }
 
-body.dark-mode .logo-text,
-body.dark-mode .header-logo .logo-text,
-body.dark-mode .logo-section .logo-text {
-    color: #000000; /* Keep black in dark mode */
-    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5); /* Optional: Improve readability */
+body.light-mode .vehicle-card:nth-child(even) {
+    background: #e8ecef;
 }
 
-/* Container for consistent width */
+body.light-mode .section h1,
+body.light-mode .section h2,
+body.light-mode .service-card h3,
+body.light-mode .vehicle-card h3,
+body.light-mode .process-step h3,
+body.light-mode .faq-question {
+    color: #1a2a44;
+}
+
+body.light-mode .section p,
+body.light-mode .process-step p,
+body.light-mode .faq-answer p,
+body.light-mode .intro-text,
+body.light-mode .contact-details p {
+    color: #666;
+}
+
+body.light-mode .faq-item {
+    border-bottom: 1px solid #ddd;
+}
+
+body.light-mode .contact-form input,
+body.light-mode .contact-form textarea {
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #333;
+}
+
+body.light-mode .contact-form label {
+    color: #1a2a44;
+}
+
+/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -71,7 +92,7 @@ body.dark-mode .logo-section .logo-text {
 
 /* Header */
 header {
-    background: rgba(26, 42, 68, 0.9);
+    background: #1c2526; /* Dark theme default */
     color: white;
     padding: 1rem 0;
     position: fixed;
@@ -83,7 +104,7 @@ header {
 }
 
 header.scrolled {
-    background: rgba(26, 42, 68, 0.7);
+    background: rgba(28, 37, 38, 0.7);
 }
 
 header .container {
@@ -101,16 +122,25 @@ header .container {
     font-weight: 700;
     color: #000000; /* Black font */
     text-decoration: none;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5); /* Improve readability */
 }
 
 .logo-text {
     font-weight: 700;
     color: #000000; /* Black font */
     text-decoration: none;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5); /* Improve readability */
 }
 
 .logo-highlight {
-    color: #d32f2f; /* Preserved red for "Auto" */
+    color: #d32f2f; /* Red for "Auto" */
+}
+
+body.light-mode .header-logo .logo-text,
+body.light-mode .logo-text,
+body.light-mode .logo-section .logo-text {
+    color: #000000; /* Keep black in light mode */
+    text-shadow: none; /* Remove shadow in light mode */
 }
 
 .menu-toggle {
@@ -128,7 +158,7 @@ header .container {
 }
 
 .menu-toggle.active i.fa-bars::before {
-    content: '\f00d'; /* Font Awesome "X" icon */
+    content: '\f00d';
 }
 
 nav {
@@ -173,8 +203,8 @@ nav a:active {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #0a141f, #1a2633); /* Dark mode gradient for all modes */
-    background-attachment: fixed; /* Parallax effect */
+    background: linear-gradient(135deg, #0a141f, #1a2633); /* Dark gradient always */
+    background-attachment: fixed;
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -184,7 +214,7 @@ nav a:active {
     font-size: 10rem;
     line-height: 1;
     color: #000000; /* Black font */
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5); /* Improve readability */
     animation: subtleFadeIn 1s ease-in-out;
 }
 
@@ -196,13 +226,15 @@ nav a:active {
 
 /* Dynamic Header Height */
 :root {
-    --header-height: 60px; /* Fallback value */
+    --header-height: 60px;
 }
 
 /* General Section Styling */
 .section {
     padding: calc(var(--header-height) + 2rem) 0 4rem 0;
     text-align: center;
+    background: #1e2a2a; /* Dark theme default */
+    color: #e0e0e0;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -213,26 +245,27 @@ nav a:active {
     transform: translateY(0);
 }
 
-.section h1 {
+.section h1,
+.section h2 {
+    color: #ffffff;
     font-size: 2.8rem;
     margin-bottom: 1.5rem;
-    color: #1a2a44;
 }
 
 .section h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #1a2a44;
 }
 
-/* Process Overview Section */
-.section p {
+.section p,
+.intro-text {
     text-align: center;
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    color: #666;
+    color: #b0b0b0;
 }
 
+/* CTA Button */
 .cta-button-wrapper {
     display: flex;
     justify-content: center;
@@ -280,13 +313,6 @@ nav a:active {
 }
 
 /* Process Details Section */
-.intro-text {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
-    color: #666;
-}
-
 .process-steps {
     max-width: 800px;
     margin: 0 auto;
@@ -297,9 +323,9 @@ nav a:active {
     align-items: flex-start;
     margin-bottom: 2rem;
     padding: 1rem;
-    background: #f9f9f9;
+    background: #252f2f; /* Dark theme default */
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
 }
 
@@ -325,12 +351,12 @@ nav a:active {
 .process-step h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #1a2a44;
+    color: #ffffff;
 }
 
 .process-step p {
     font-size: 1rem;
-    color: #666;
+    color: #b0b0b0;
     text-align: left;
 }
 
@@ -342,10 +368,10 @@ nav a:active {
 }
 
 .service-card {
-    background: #f9f9f9;
+    background: #1e2a2a; /* Dark theme default */
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -357,7 +383,12 @@ nav a:active {
 .service-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #1a2a44;
+    color: #ffffff;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #b0b0b0;
 }
 
 /* Vehicles Section */
@@ -368,9 +399,9 @@ nav a:active {
 }
 
 .vehicle-card {
-    background: #fff;
+    background: #252f2f; /* Dark theme default */
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s ease;
@@ -383,11 +414,11 @@ nav a:active {
 }
 
 .vehicle-card:nth-child(odd) {
-    background: #f0f4f8;
+    background: #252f2f;
 }
 
 .vehicle-card:nth-child(even) {
-    background: #e8ecef;
+    background: #2a3535;
 }
 
 .vehicle-icon {
@@ -399,12 +430,12 @@ nav a:active {
 .vehicle-card h3 {
     font-size: 1.5rem;
     margin: 1rem 0 0.5rem;
-    color: #1a2a44;
+    color: #ffffff;
 }
 
 .vehicle-card p {
     font-size: 1rem;
-    color: #666;
+    color: #b0b0b0;
     margin-bottom: 1rem;
 }
 
@@ -437,18 +468,18 @@ nav a:active {
 
 .faq-item {
     margin-bottom: 1rem;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #444; /* Dark theme default */
 }
 
 .faq-question {
     width: 100%;
-    background: #f9f9f9;
+    background: #1e2a2a; /* Dark theme default */
     border: none;
     padding: 1rem;
     text-align: left;
     font-size: 1.2rem;
     font-weight: 500;
-    color: #1a2a44;
+    color: #ffffff;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -457,7 +488,7 @@ nav a:active {
 }
 
 .faq-question:hover {
-    background: #f0f0f0;
+    background: #2a3535;
 }
 
 .faq-question::after {
@@ -477,6 +508,7 @@ nav a:active {
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
     padding: 0 1rem;
+    background: #1e2a2a; /* Dark theme default */
 }
 
 .faq-answer.active {
@@ -485,7 +517,7 @@ nav a:active {
 }
 
 .faq-answer p {
-    color: #666;
+    color: #b0b0b0;
 }
 
 .faq-link {
@@ -514,6 +546,7 @@ nav a:active {
 .contact-details p {
     margin: 1rem 0;
     font-size: 1.2rem;
+    color: #b0b0b0;
 }
 
 .contact-details a {
@@ -541,15 +574,17 @@ nav a:active {
 
 .contact-form label {
     font-weight: 500;
-    color: #1a2a44;
+    color: #ffffff;
 }
 
 .contact-form input,
 .contact-form textarea {
     padding: 0.5rem;
-    border: 1px solid #ddd;
+    border: 1px solid #444; /* Dark theme default */
     border-radius: 5px;
     font-size: 1rem;
+    background: #252f2f; /* Dark theme default */
+    color: #e0e0e0;
 }
 
 .contact-form textarea {
@@ -573,7 +608,7 @@ nav a:active {
 
 /* Footer */
 footer {
-    background: #1a2a44;
+    background: #1c2526; /* Dark theme default */
     color: white;
     padding: 3rem 0;
     border-top: 3px solid #d32f2f;
@@ -646,7 +681,7 @@ footer .container {
     60% { transform: translateY(-5px); }
 }
 
-/* Dark Mode Toggle */
+/* Theme Toggle Button */
 #dark-mode-toggle {
     position: fixed;
     top: 20px;
@@ -659,6 +694,10 @@ footer .container {
     z-index: 1000;
 }
 
+body.light-mode #dark-mode-toggle i.fa-moon::before {
+    content: '\f185'; /* Sun icon for light mode */
+}
+
 /* Preloader */
 #preloader {
     position: fixed;
@@ -666,7 +705,7 @@ footer .container {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #1a2a44;
+    background: #1c2526; /* Dark theme default */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -719,7 +758,7 @@ footer .container {
         display: none;
         flex-direction: column;
         gap: 0.8rem;
-        background: rgba(26, 42, 68, 0.95);
+        background: rgba(28, 37, 38, 0.95); /* Dark theme default */
         position: absolute;
         top: 60px;
         left: 0;
@@ -728,6 +767,10 @@ footer .container {
         text-align: center;
         transform: translateY(-100%);
         transition: transform 0.3s ease;
+    }
+
+    body.light-mode nav ul {
+        background: rgba(26, 42, 68, 0.95); /* Light theme nav */
     }
 
     nav ul.active {
@@ -747,7 +790,7 @@ footer .container {
 
     .logo-section {
         height: 50vh;
-        background-attachment: scroll; /* Disable parallax on mobile */
+        background-attachment: scroll;
     }
 
     .logo-section .logo-text {
