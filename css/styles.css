@@ -47,16 +47,16 @@ header .container {
 }
 
 .header-logo .logo-text {
-    font-family: 'Noto Sans', sans-serif; /* Noto Sans Black */
-    font-weight: 900; /* Black weight */
+    font-family: 'Oswald', sans-serif; /* Oswald Bold */
+    font-weight: 700; /* Bold weight */
     font-size: 1.8rem; /* Slightly larger for emphasis */
     color: #ffffff;
     text-decoration: none;
 }
 
 .logo-text {
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 900;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
     color: #ffffff;
     text-decoration: none;
 }
@@ -133,8 +133,8 @@ nav a:active {
 }
 
 .logo-section .logo-text {
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 900;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
     font-size: 10rem;
     line-height: 1;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
@@ -470,8 +470,8 @@ footer .container {
 }
 
 .footer-text {
-    font-family: 'Noto Sans', sans-serif; /* Noto Sans Black */
-    font-weight: 900;
+    font-family: 'Oswald', sans-serif; /* Oswald Bold */
+    font-weight: 700;
     font-size: 1rem;
     opacity: 0.9;
 }
