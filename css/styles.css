@@ -47,15 +47,15 @@ header .container {
 }
 
 .header-logo .logo-text {
-    font-family: 'acumin-pro-semi-condensed', sans-serif; /* Acumin Variable SemiCondensed Ultra Black */
-    font-weight: 900; /* Ultra Black weight */
+    font-family: 'Noto Sans', sans-serif; /* Noto Sans Black */
+    font-weight: 900; /* Black weight */
     font-size: 1.8rem; /* Slightly larger for emphasis */
     color: #ffffff;
     text-decoration: none;
 }
 
 .logo-text {
-    font-family: 'acumin-pro-semi-condensed', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: 900;
     color: #ffffff;
     text-decoration: none;
@@ -133,7 +133,7 @@ nav a:active {
 }
 
 .logo-section .logo-text {
-    font-family: 'acumin-pro-semi-condensed', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: 900;
     font-size: 10rem;
     line-height: 1;
@@ -470,7 +470,7 @@ footer .container {
 }
 
 .footer-text {
-    font-family: 'acumin-pro-semi-condensed', sans-serif; /* Acumin for StreamLine Auto */
+    font-family: 'Noto Sans', sans-serif; /* Noto Sans Black */
     font-weight: 900;
     font-size: 1rem;
     opacity: 0.9;
