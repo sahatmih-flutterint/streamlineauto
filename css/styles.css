@@ -8,55 +8,9 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    color: #333;
+    background: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text */
     transition: background 0.3s ease, color 0.3s ease;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background: #121212;
-    color: #e0e0e0;
-}
-
-body.dark-mode header,
-body.dark-mode footer {
-    background: #1c2526;
-}
-
-body.dark-mode .section,
-body.dark-mode .service-card,
-body.dark-mode .vehicle-card,
-body.dark-mode .process-step,
-body.dark-mode .faq-question {
-    background: #1e2a2a;
-    color: #e0e0e0;
-}
-
-body.dark-mode .logo-section {
-    background: linear-gradient(135deg, #0a141f, #1a2633);
-}
-
-body.dark-mode .section h1,
-body.dark-mode .section h2,
-body.dark-mode .service-card h3,
-body.dark-mode .vehicle-card h3,
-body.dark-mode .process-step h3 {
-    color: #ffffff;
-}
-
-body.dark-mode .section p,
-body.dark-mode .process-step p,
-body.dark-mode .faq-answer p,
-body.dark-mode .contact-details p {
-    color: #b0b0b0;
-}
-
-body.dark-mode .vehicle-card:nth-child(odd) {
-    background: #252f2f;
-}
-
-body.dark-mode .vehicle-card:nth-child(even) {
-    background: #2a3535;
 }
 
 /* Container for consistent width */
@@ -68,7 +22,7 @@ body.dark-mode .vehicle-card:nth-child(even) {
 
 /* Header */
 header {
-    background: rgba(26, 42, 68, 0.9);
+    background: #1c2526; /* Dark header background */
     color: white;
     padding: 1rem 0;
     position: fixed;
@@ -80,7 +34,7 @@ header {
 }
 
 header.scrolled {
-    background: rgba(26, 42, 68, 0.7);
+    background: rgba(28, 37, 38, 0.7); /* Slightly transparent dark background */
 }
 
 header .container {
@@ -107,7 +61,7 @@ header .container {
 }
 
 .logo-highlight {
-    color: #d32f2f;
+    color: #d32f2f; /* Highlight color preserved */
 }
 
 .menu-toggle {
@@ -170,7 +124,7 @@ nav a:active {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #1a2a44, #2e4066);
+    background: linear-gradient(135deg, #0a141f, #1a2633); /* Dark gradient */
     background-attachment: fixed; /* Parallax effect */
     background-position: center;
     background-size: cover;
@@ -197,8 +151,10 @@ nav a:active {
 
 /* General Section Styling */
 .section {
-    padding: calc(var(--header-height) + 2rem) 0 4rem 0; /* Dynamic padding based on header height */
+    padding: calc(var(--header-height) + 2rem) 0 4rem 0;
     text-align: center;
+    background: #1e2a2a; /* Dark section background */
+    color: #e0e0e0;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -209,26 +165,25 @@ nav a:active {
     transform: translateY(0);
 }
 
-.section h1 {
+.section h1, .section h2 {
+    color: #ffffff;
     font-size: 2.8rem;
     margin-bottom: 1.5rem;
-    color: #1a2a44;
 }
 
 .section h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #1a2a44;
 }
 
-/* Process Overview Section */
-.section p {
+.section p, .intro-text {
     text-align: center;
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    color: #666;
+    color: #b0b0b0; /* Lighter gray for secondary text */
 }
 
+/* CTA Button */
 .cta-button-wrapper {
     display: flex;
     justify-content: center;
@@ -276,13 +231,6 @@ nav a:active {
 }
 
 /* Process Details Section */
-.intro-text {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
-    color: #666;
-}
-
 .process-steps {
     max-width: 800px;
     margin: 0 auto;
@@ -293,9 +241,9 @@ nav a:active {
     align-items: flex-start;
     margin-bottom: 2rem;
     padding: 1rem;
-    background: #f9f9f9;
+    background: #252f2f; /* Dark background for process steps */
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
 }
 
@@ -321,12 +269,12 @@ nav a:active {
 .process-step h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #1a2a44;
+    color: #ffffff;
 }
 
 .process-step p {
     font-size: 1rem;
-    color: #666;
+    color: #b0b0b0;
     text-align: left;
 }
 
@@ -338,10 +286,10 @@ nav a:active {
 }
 
 .service-card {
-    background: #f9f9f9;
+    background: #1e2a2a; /* Dark background for service cards */
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -353,7 +301,12 @@ nav a:active {
 .service-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #1a2a44;
+    color: #ffffff;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #b0b0b0;
 }
 
 /* Vehicles Section */
@@ -364,14 +317,14 @@ nav a:active {
 }
 
 .vehicle-card {
-    background: #fff;
+    background: #252f2f; /* Dark background for vehicle cards */
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s ease;
-    padding: 2rem; /* Increased padding for better spacing without images */
-    min-height: 200px; /* Ensure consistent height */
+    padding: 2rem;
+    min-height: 200px;
 }
 
 .vehicle-card:hover {
@@ -380,11 +333,11 @@ nav a:active {
 
 /* Alternating background colors for vehicle cards */
 .vehicle-card:nth-child(odd) {
-    background: #f0f4f8;
+    background: #252f2f;
 }
 
 .vehicle-card:nth-child(even) {
-    background: #e8ecef;
+    background: #2a3535;
 }
 
 .vehicle-icon {
@@ -396,12 +349,12 @@ nav a:active {
 .vehicle-card h3 {
     font-size: 1.5rem;
     margin: 1rem 0 0.5rem;
-    color: #1a2a44;
+    color: #ffffff;
 }
 
 .vehicle-card p {
     font-size: 1rem;
-    color: #666;
+    color: #b0b0b0;
     margin-bottom: 1rem;
 }
 
@@ -434,18 +387,18 @@ nav a:active {
 
 .faq-item {
     margin-bottom: 1rem;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #444; /* Darker border */
 }
 
 .faq-question {
     width: 100%;
-    background: #f9f9f9;
+    background: #1e2a2a; /* Dark background */
     border: none;
     padding: 1rem;
     text-align: left;
     font-size: 1.2rem;
     font-weight: 500;
-    color: #1a2a44;
+    color: #ffffff;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -454,7 +407,7 @@ nav a:active {
 }
 
 .faq-question:hover {
-    background: #f0f0f0;
+    background: #2a3535;
 }
 
 .faq-question::after {
@@ -474,6 +427,7 @@ nav a:active {
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
     padding: 0 1rem;
+    background: #1e2a2a; /* Dark background for answers */
 }
 
 .faq-answer.active {
@@ -482,7 +436,7 @@ nav a:active {
 }
 
 .faq-answer p {
-    color: #666;
+    color: #b0b0b0;
 }
 
 .faq-link {
@@ -511,6 +465,7 @@ nav a:active {
 .contact-details p {
     margin: 1rem 0;
     font-size: 1.2rem;
+    color: #b0b0b0;
 }
 
 .contact-details a {
@@ -538,15 +493,17 @@ nav a:active {
 
 .contact-form label {
     font-weight: 500;
-    color: #1a2a44;
+    color: #ffffff;
 }
 
 .contact-form input,
 .contact-form textarea {
     padding: 0.5rem;
-    border: 1px solid #ddd;
+    border: 1px solid #444; /* Darker border */
     border-radius: 5px;
     font-size: 1rem;
+    background: #252f2f; /* Dark input background */
+    color: #e0e0e0;
 }
 
 .contact-form textarea {
@@ -570,7 +527,7 @@ nav a:active {
 
 /* Footer */
 footer {
-    background: #1a2a44;
+    background: #1c2526; /* Dark footer background */
     color: white;
     padding: 3rem 0;
     border-top: 3px solid #d32f2f;
@@ -630,7 +587,7 @@ footer .container {
 #back-to-top.visible {
     display: flex;
     opacity: 1;
-    animation: bounce 1s; /* Bounce animation on appear */
+    animation: bounce 1s;
 }
 
 #back-to-top:hover {
@@ -643,19 +600,6 @@ footer .container {
     60% { transform: translateY(-5px); }
 }
 
-/* Dark Mode Toggle */
-#dark-mode-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 1000;
-}
-
 /* Preloader */
 #preloader {
     position: fixed;
@@ -663,7 +607,7 @@ footer .container {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #1a2a44;
+    background: #1c2526; /* Dark preloader background */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -716,20 +660,20 @@ footer .container {
         display: none;
         flex-direction: column;
         gap: 0.8rem;
-        background: rgba(26, 42, 68, 0.95);
+        background: rgba(28, 37, 38, 0.95); /* Dark nav background */
         position: absolute;
         top: 60px;
         left: 0;
         width: 100%;
         padding: 1rem 0;
         text-align: center;
-        transform: translateY(-100%); /* Initial state for animation */
-        transition: transform 0.3s ease; /* Slide-in animation */
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
     }
 
     nav ul.active {
         display: flex;
-        transform: translateY(0); /* Slide in when active */
+        transform: translateY(0);
     }
 
     nav a {
