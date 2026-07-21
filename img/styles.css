@@ -110,3 +110,68 @@ h1,h2,.statement-box h2,.contact-copy h2,.intro-content h2,.section-heading h2,.
 @media(max-width:700px){
   .case-column h3{margin-top:20px}
 }
+
+/* Финални корекции за прозрачното лого */
+.brand-logo{
+  background:transparent!important;
+  object-fit:contain;
+  filter:none;
+}
+@media(min-width:1051px){
+  .brand-logo{max-width:285px;max-height:92px}
+  .brand{min-width:290px}
+}
+@media(max-width:700px){
+  .brand-logo{max-width:195px;max-height:66px}
+}
+
+/* Логото е вградено директно в HTML, за да не зависи от файлов път. */
+.brand .brand-fallback{display:none!important}
+.brand-logo{display:block!important}
+
+/* Всички секции са тъмни — без бели, сиви или светлозелени фонове */
+.intro-section,
+.process,
+.guarantee{
+  background:#080b10!important;
+  color:#f5f7fa!important;
+}
+
+.intro-section .section-label,
+.process .section-label,
+.guarantee .section-label{
+  color:#aeb6c2!important;
+}
+
+.intro-content p,
+.process .section-heading>p,
+.guarantee .section-heading>p,
+.process-step p,
+.guarantee-card p{
+  color:#8e98a8!important;
+}
+
+.process-track{
+  border-top-color:rgba(255,255,255,.10)!important;
+}
+
+.process-step{
+  border-right-color:rgba(255,255,255,.10)!important;
+}
+
+.guarantee-main,
+.guarantee-card{
+  background:#0d1118!important;
+  color:#f5f7fa!important;
+  border-color:rgba(255,255,255,.10)!important;
+}
+
+.guarantee-main p{
+  color:#8e98a8!important;
+}
+
+@media(max-width:700px){
+  .process-step{
+    border-top-color:rgba(255,255,255,.10)!important;
+  }
+}
