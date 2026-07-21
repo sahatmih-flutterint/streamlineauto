@@ -110,3 +110,17 @@ h1,h2,.statement-box h2,.contact-copy h2,.intro-content h2,.section-heading h2,.
 @media(max-width:700px){
   .case-column h3{margin-top:20px}
 }
+
+/* Финални корекции за прозрачното лого */
+.brand-logo{
+  background:transparent!important;
+  object-fit:contain;
+  filter:none;
+}
+@media(min-width:1051px){
+  .brand-logo{max-width:285px;max-height:92px}
+  .brand{min-width:290px}
+}
+@media(max-width:700px){
+  .brand-logo{max-width:195px;max-height:66px}
+}
