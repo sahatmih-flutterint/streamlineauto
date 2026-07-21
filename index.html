@@ -36,12 +36,13 @@
 
       <a class="nav-cta" href="#contact">Безплатна консултация</a>
 
-      <button class="menu-btn" aria-label="Отвори менюто" aria-expanded="false">
+      <button class="menu-btn" aria-label="Отвори менюто" aria-expanded="false" aria-controls="mobile-navigation">
         <span></span><span></span>
       </button>
     </div>
 
-    <div class="mobile-nav" aria-hidden="true">
+    <div class="menu-overlay" aria-hidden="true"></div>
+    <div class="mobile-nav" id="mobile-navigation" aria-hidden="true">
       <a href="#markets">Пазари</a>
       <a href="#inspection">Проверка</a>
       <a href="#process">Процес</a>
@@ -87,9 +88,9 @@
           <div class="car-stage">
             <div class="stage-line"></div>
             <div class="stage-copy">
-              <span>CANADA</span>
-              <span>USA</span>
-              <span>SOUTH KOREA</span>
+              <span>КАНАДА</span>
+              <span>САЩ</span>
+              <span>ЮЖНА КОРЕЯ</span>
             </div>
             <div class="car-silhouette" aria-label="Силует на автомобил">
               <svg viewBox="0 0 900 360" role="img">
@@ -110,7 +111,7 @@
             </div>
             <div class="scan-card scan-two">
               <small>Пазар</small>
-              <strong>Global sourcing</strong>
+              <strong>Международен подбор</strong>
             </div>
           </div>
         </div>
@@ -214,7 +215,7 @@
             и ви даваме контекст преди да вземете решение.
           </p>
           <div class="inspection-meter">
-            <div class="meter-head"><span>Подход за проверка</span><strong>DETAIL FIRST</strong></div>
+            <div class="meter-head"><span>Подход за проверка</span><strong>ДЕТАЙЛИТЕ ПЪРВО</strong></div>
             <div class="meter-track"><span></span></div>
           </div>
         </div>
@@ -288,7 +289,7 @@
             <p>Получавате информацията и вземате информирано решение.</p>
           </article>
           <article class="process-step reveal">
-            <span>05</span><h3>Покупка & транспорт</h3>
+            <span>05</span><h3>Покупка и транспорт</h3>
             <p>Организираме придобиването и международната логистика.</p>
           </article>
           <article class="process-step reveal">

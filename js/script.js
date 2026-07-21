@@ -1,29 +1,57 @@
 const header=document.querySelector(".site-header");
 const menuBtn=document.querySelector(".menu-btn");
 const mobileNav=document.querySelector(".mobile-nav");
+const menuOverlay=document.querySelector(".menu-overlay");
 const revealEls=document.querySelectorAll(".reveal");
 const processTrack=document.querySelector(".process-track");
 const faqItems=document.querySelectorAll(".faq-item");
 const cursorGlow=document.querySelector(".cursor-glow");
 
+let savedScrollY=0;
+
 const onScroll=()=>header.classList.toggle("scrolled",window.scrollY>20);
 onScroll();
 window.addEventListener("scroll",onScroll,{passive:true});
 
-menuBtn?.addEventListener("click",()=>{
-  const open=!menuBtn.classList.contains("active");
-  menuBtn.classList.toggle("active",open);
-  mobileNav.classList.toggle("open",open);
-  document.body.classList.toggle("menu-open",open);
-  menuBtn.setAttribute("aria-expanded",String(open));
-  mobileNav.setAttribute("aria-hidden",String(!open));
-});
-mobileNav?.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
-  menuBtn.classList.remove("active");mobileNav.classList.remove("open");
+function openMenu(){
+  savedScrollY=window.scrollY;
+  menuBtn.classList.add("active");
+  mobileNav.classList.add("open");
+  menuOverlay?.classList.add("open");
+  document.body.classList.add("menu-open");
+  document.body.style.top=`-${savedScrollY}px`;
+  menuBtn.setAttribute("aria-expanded","true");
+  mobileNav.setAttribute("aria-hidden","false");
+  menuOverlay?.setAttribute("aria-hidden","false");
+}
+
+function closeMenu(){
+  menuBtn.classList.remove("active");
+  mobileNav.classList.remove("open");
+  menuOverlay?.classList.remove("open");
   document.body.classList.remove("menu-open");
+  document.body.style.top="";
+  window.scrollTo(0,savedScrollY);
   menuBtn.setAttribute("aria-expanded","false");
   mobileNav.setAttribute("aria-hidden","true");
-}));
+  menuOverlay?.setAttribute("aria-hidden","true");
+}
+
+menuBtn?.addEventListener("click",()=>{
+  menuBtn.classList.contains("active") ? closeMenu() : openMenu();
+});
+
+menuOverlay?.addEventListener("click",closeMenu);
+
+mobileNav?.querySelectorAll("a").forEach(a=>a.addEventListener("click",closeMenu));
+
+window.addEventListener("keydown",(e)=>{
+  if(e.key==="Escape" && menuBtn?.classList.contains("active")) closeMenu();
+});
+
+window.addEventListener("resize",()=>{
+  if(window.innerWidth>1050 && menuBtn?.classList.contains("active")) closeMenu();
+});
 
 const observer=new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
@@ -82,7 +110,6 @@ document.querySelectorAll(".market-card").forEach(card=>{
 
 document.getElementById("year").textContent=new Date().getFullYear();
 
-// Ако съществуващото logo.png липсва при локален preview, показваме текстов fallback.
 document.querySelectorAll(".brand-logo").forEach(img=>{
   img.addEventListener("error",()=>{
     img.style.display="none";
