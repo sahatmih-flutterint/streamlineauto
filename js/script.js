@@ -24,6 +24,7 @@ function openMenu(){
   mobileNav.setAttribute("aria-hidden","false");
   menuOverlay?.setAttribute("aria-hidden","false");
 }
+
 function closeMenu(){
   menuBtn.classList.remove("active");
   mobileNav.classList.remove("open");
