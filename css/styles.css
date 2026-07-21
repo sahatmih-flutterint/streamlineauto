@@ -124,3 +124,7 @@ h1,h2,.statement-box h2,.contact-copy h2,.intro-content h2,.section-heading h2,.
 @media(max-width:700px){
   .brand-logo{max-width:195px;max-height:66px}
 }
+
+/* Логото е вградено директно в HTML, за да не зависи от файлов път. */
+.brand .brand-fallback{display:none!important}
+.brand-logo{display:block!important}
